@@ -23,7 +23,7 @@ public:
     //! copy =
     Quote& operator =(const Quote& rhs)
     {
-        if(*this != rhs)
+        if(this != &rhs)
         {
             bookNo = rhs.bookNo;
             price  = rhs.price;
@@ -36,7 +36,7 @@ public:
     //! move =
     Quote& operator =(Quote&& rhs)  noexcept
     {
-        if(*this != rhs)
+        if(this != &rhs)
         {
             bookNo = std::move(rhs.bookNo);
             price  = std::move(rhs.price);
